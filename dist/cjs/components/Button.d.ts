@@ -1,6 +1,6 @@
-import React from 'react';
-export interface IButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-    backgroundColor?: string;
-    color?: string;
+/// <reference types="react" />
+import { ButtonProps as BsButtonProps } from 'react-bootstrap';
+export interface ButtonProps extends BsButtonProps {
+    scale?: string;
 }
-export declare const Button: React.FunctionComponent<IButtonProps>;
+export declare const Button: ({ scale, children, ...props }: ButtonProps) => JSX.Element;

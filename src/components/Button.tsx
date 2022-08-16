@@ -1,22 +1,10 @@
 import React from 'react';
+import { Button as BsButton, ButtonProps as BsButtonProps } from 'react-bootstrap';
 
-export interface IButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-  backgroundColor?: string;
-  color?: string;
+export interface ButtonProps extends BsButtonProps {
+  scale?: string;
 }
 
-export const Button: React.FunctionComponent<IButtonProps> = (props) => {
-  const { children, backgroundColor, color, style } = props;
-
-  let _style: React.CSSProperties = style || {};
-
-  /** Override Defaults */
-  if (backgroundColor && _style) _style.backgroundColor = backgroundColor;
-  if (color && _style) _style.color = color;
-
-  return (
-    <button style={_style} {...props}>
-      {children}
-    </button>
-  );
+export const Button = ({ scale, children, ...props }: ButtonProps) => {
+  return <BsButton {...props}>{children}</BsButton>;
 };

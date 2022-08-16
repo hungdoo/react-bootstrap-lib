@@ -1,0 +1,13 @@
+// Custumize bs variables
+$body-bg: #f4f4f4;
+$murr-light: #4d9b17;
+$murr-dark: #014d0c;
+$colors: (
+  'murr-light': $murr-light,
+  'murr-dark': $murr-dark
+);
+$primary: $murr-light;
+$secondary: $murr-dark;
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
